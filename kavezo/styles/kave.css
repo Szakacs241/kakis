@@ -6,31 +6,78 @@ body {
     padding: 0;
 }
 
+
 header {
     background-color: #004d40;
     padding: 10px;
     text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-header h1 {
-    color: #fff;
-    margin: 0;
+.logo {
+    position: absolute;
+    right: 1px;
+    height: 88px;
+    width: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    font-size: 24px;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 10px;
+    position: relative;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    padding: 10px 20px;
+    position: relative;
+    transition: color 0.3s;
 }
+
+nav ul li a:hover,
+nav ul li.active a {
+    color: #00796b;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav ul li a:hover::after,
+nav ul li.active a::after {
+    width: 100%;
+    left: 0;
+}
+
+main {
+    padding: 25px;
+    text-align: center;
+}
+
 
 main {
     padding: 20px;
@@ -51,48 +98,29 @@ section ul li {
 }
 
 section ul li img {
-    width: 150px;
-    height: auto;
-    border-radius: 8px; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    width: 250px;
+    height: 250px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 ul li p {
-    margin-top: 10px;
+    margin-top: 15px;
     color: #00796b;
 }
 
-.logo {
-    position: absolute; 
-    top: 6px; 
-    right: 10px; 
-    height: 100px;
-    width: auto; 
-}
+@media only screen and (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
 
-/* @media only screen and (max-width: 600px) {
-    section ul {
-        flex-direction: column; 
-    }
-    
-    section ul li {
-        margin: 10px auto; 
-    }
-    
-    section ul li img {
-        width: 100%; 
-        height: auto; 
-    }
     .logo {
         height: 50px;
     }
-} */
-@media only screen and (max-width: 600px) {
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-    .logo {
-        height: 50px; 
-    }
+}
+h3{
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #333;
 }

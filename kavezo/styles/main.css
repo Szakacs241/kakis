@@ -11,28 +11,48 @@ header {
     padding: 10px;
     text-align: center;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-header h1 {
-    color: #fff;
-    margin: 0;
-    font-size: 50px;
+.logo {
+    position: absolute;
+    right: 1px;
+    height: 88px;
+    width: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    font-size: 20px;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    font-size: 24px;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 10px;
+    position: relative;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    padding: 10px 20px;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li.active a {
+    color: #00796b;
 }
 
 main {
@@ -51,45 +71,13 @@ p {
     color: #333;
 }
 
-.logo {
-    position: absolute;
-    top: 6px;
-    right: 10px;
-    height: 100px;
-    width: auto;
-}
-
-@media only screen and (max-width: 600px) {
-    header h1 {
-        font-size: 30px;
-    }
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-        text-align: center;
-    }
-    .logo {
-        height: 50px;
-    }
-    h2 {
-        font-size: 30px;
-    }
-    p {
-        font-size: 18px;
-    }
-    .vonal {
-        width: 100%;
-    }
-}
-
 .vonal {
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     height: 2px;
     background: green;
-    top: 32%;
-    left: 50%;
-    position: fixed;
-    transform: translate(-50%, -50%);
+    margin: 40px auto;
+    position: relative;
 }
 
 .vonal::before {
@@ -107,8 +95,49 @@ p {
     0% {
         left: 0;
     }
-
     100% {
         left: 100%;
+    }
+}
+
+.offer {
+    margin-top: 50px;
+}
+
+.offer-box {
+    border: 2px solid #00796b;
+    padding: 20px;
+    display: inline-block;
+    background-color: #f1f8e9;
+}
+
+.offer-box img {
+    width: 150px;
+    height: 150px;
+    margin: 10px 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .logo {
+        height: 50px;
+    }
+
+    nav ul {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li {
+        display: block;
+    }
+
+    .logo {
+        height: 40px;
     }
 }

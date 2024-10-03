@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucky Kávézó - Főoldal</title>
     <link rel="stylesheet" href="styles/main.css">
-     
 </head>
 <body>
     <header>
-        <h1>Lucky Kávézó</h1>
+        <img src="images/luckycoffe.png" alt="Lucky Kávézó Logo" class="logo">
         <nav>
             <ul>
                 <li><a href="main.html">Fő oldal</a></li>
@@ -19,13 +18,23 @@
                 <li><a href="elerhetoseg.html">Elérhetőség</a></li>
             </ul>
         </nav>
-        <img src="images/luckycoffe.png" alt="Lucky Kávézó Logo" class="logo">
     </header>
     <main>
         <section>
             <h2>Üdvözlünk a Lucky Kávézóban!</h2>
             <p>Próbáld ki a legfinomabb kávékat és süteményeket!</p>
             <div class="vonal"></div>
+        </section>
+
+        <section class="offer">
+            <h2>Mai ajánlatunk</h2>
+            <div class="offer-box">
+                <p id="offer-text"></p>
+                <img id="offer-coffee" src="" alt="Kávé ajánlat" />
+                <p id="coffee-price"></p>
+                <img id="offer-pastry" src="" alt="Süti ajánlat" />
+                <p id="pastry-price"></p>
+            </div>
         </section>
     </main>
     <script src="scripts/main.js"></script>
